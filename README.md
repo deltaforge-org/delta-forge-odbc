@@ -199,17 +199,6 @@ Every BI tool surfaces the chain in some form: Power BI's error pop-up
 **Details** view, Tableau's performance recording, DBeaver's error pane,
 `SQLGetDiagRec` directly from code.
 
-## Known issues
-
-**Power BI relationship joins on the ADBC connector.** In Power BI
-DirectQuery, a star-schema measure that joins two tables over a relationship
-can fail to fold on the ADBC connector, surfacing as `We couldn't fold the
-expression to the data source`. This is a Power BI `Adbc.DataSource` fold-path
-behaviour, not a DeltaForge engine bug. This ODBC driver is the recommended
-workaround: the same model folds correctly over ODBC. Full write-up and
-alternatives:
-[Known issue: Power BI relationship joins on the ADBC connector](https://deltaforge.org/pages/power-bi-adbc-relationship-folding.html).
-
 ## Reporting issues
 
 - Bugs and feature requests: https://github.com/deltaforge-org/delta-forge-odbc/issues
